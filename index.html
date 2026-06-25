@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Carole Vallat — Pilates, yoga & accompagnement ménopause au Landeron</title>
+<script>document.documentElement.classList.add('js')</script>
+<style>
+@font-face{font-family:'Fraunces';src:url('./fonts/Fraunces-Variable.woff2') format('woff2');font-weight:300 700;font-style:normal;font-display:swap}
+@font-face{font-family:'Fraunces';src:url('./fonts/Fraunces-Italic-Variable.woff2') format('woff2');font-weight:300 700;font-style:italic;font-display:swap}
+@font-face{font-family:'Inter';src:url('./fonts/Inter-Variable.woff2') format('woff2');font-weight:400 600;font-style:normal;font-display:swap}
+
+:root{
+  --creme:#F6F0E6; --creme2:#FBF6EC; --encre:#2B2118; --noyer:#241A12;
+  --terra:#A55C3A; --terra-d:#854328; --argile:#E0B393; --argile-d:#D4A78A; --or:#C68A5A;
+  --sable:#EFE6D6; --lin:#E7DCC7; --taupe:#8A7868; --taupe2:#5C5043;
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1); --pad:clamp(1.25rem,5vw,5.5rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--creme); color:var(--encre); font-family:var(--sans);
+  font-size:clamp(1rem,.95rem+.22vw,1.075rem); line-height:1.75; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+h1,h2,h3{font-family:var(--serif); font-weight:340; line-height:1.05; letter-spacing:-.025em}
+img{display:block; max-width:100%}
+a{color:inherit; text-decoration:none}
+
+.wrap{max-width:1280px; margin-inline:auto; padding-inline:var(--pad)}
+.kicker{font-family:var(--sans); font-size:.7rem; font-weight:600; letter-spacing:.3em; text-transform:uppercase; color:var(--terra); display:inline-flex; align-items:center; gap:.85rem}
+.kicker::before{content:""; width:32px; height:1px; background:currentColor; opacity:.55}
+.kicker.c{justify-content:center}.kicker.nb::before{display:none}
+
+.btn{display:inline-flex; align-items:center; gap:.7em; font-family:var(--sans); font-weight:500; font-size:.92rem; letter-spacing:.02em;
+  padding:1.05rem 1.95rem; border-radius:100px; background:var(--terra); color:var(--creme2); border:1px solid var(--terra);
+  transition:transform .55s var(--ease), background .4s, box-shadow .55s var(--ease)}
+.btn .arr{display:grid; place-items:center; width:1.5em; height:1.5em; border-radius:50%; background:rgba(255,255,255,.18); transition:transform .55s var(--ease)}
+.btn:hover{background:var(--terra-d); transform:translateY(-3px); box-shadow:0 18px 34px -16px rgba(133,67,40,.7)}
+.btn:hover .arr{transform:translateX(3px)}
+.btn--out{background:transparent; border-color:rgba(251,246,236,.5); color:var(--creme2)}
+.btn--out:hover{background:rgba(251,246,236,.1); border-color:var(--creme2)}
+.btn--light{background:var(--creme2); color:var(--terra-d); border-color:var(--creme2)}
+.btn--light .arr{background:rgba(133,67,40,.14)}.btn--light:hover{background:#fff}
+
+.tlink{display:inline-flex; align-items:center; gap:.55em; font-weight:500; position:relative; padding-bottom:3px}
+.tlink::after{content:""; position:absolute; left:0; bottom:0; height:1px; width:100%; background:currentColor; opacity:.4; transform:scaleX(0); transform-origin:left; transition:transform .5s var(--ease)}
+.tlink:hover::after{transform:scaleX(1)}
+.tlink .arr{transition:transform .5s var(--ease)}.tlink:hover .arr{transform:translateX(5px)}
+
+.ghostnum{font-family:var(--serif); font-style:italic; font-weight:300; font-size:clamp(7rem,17vw,14rem); line-height:.7; color:var(--argile-d); opacity:.3; letter-spacing:-.04em}
+
+/* content visible by default; animate ONLY when JS confirmed */
+html.js .reveal{opacity:0; transform:translateY(28px); transition:opacity 1.1s var(--ease), transform 1.1s var(--ease)}
+html.js .reveal.in{opacity:1; transform:none}
+html.js .reveal.d1{transition-delay:.1s}html.js .reveal.d2{transition-delay:.2s}html.js .reveal.d3{transition-delay:.3s}
+@media(prefers-reduced-motion:reduce){html.js .reveal{opacity:1!important; transform:none!important}}
+
+/* HEADER */
+.top{position:fixed; inset:0 0 auto 0; z-index:50; transition:background .5s var(--ease), box-shadow .5s var(--ease)}
+.top .bar{display:grid; grid-template-columns:1fr auto 1fr; align-items:center; padding-block:1.5rem; color:var(--creme2)}
+.top .l{display:flex; gap:2rem; justify-self:start}.top .r{display:flex; gap:1.7rem; align-items:center; justify-self:end}
+.brand{font-family:var(--serif); font-weight:400; font-size:1.6rem; text-align:center; white-space:nowrap}
+.brand em{font-style:italic}
+.top .lk{font-size:.75rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; opacity:.9; position:relative}
+.top .lk::after{content:""; position:absolute; left:0; bottom:-6px; height:1px; width:100%; background:currentColor; transform:scaleX(0); transform-origin:left; transition:transform .45s var(--ease)}
+.top .lk:hover::after{transform:scaleX(1)}
+.top .res{font-size:.72rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; border:1px solid rgba(251,246,236,.5); border-radius:100px; padding:.6rem 1.2rem; transition:background .4s,color .4s}
+.top .res:hover{background:var(--creme2); color:var(--encre)}
+.top.solid{background:rgba(246,240,230,.9); backdrop-filter:blur(14px); box-shadow:0 1px 0 rgba(43,33,24,.08)}
+.top.solid .bar,.top.solid .brand{color:var(--encre)}
+.top.solid .res{border-color:rgba(43,33,24,.3)}.top.solid .res:hover{background:var(--terra); color:var(--creme2); border-color:var(--terra)}
+@media(max-width:940px){.top .l,.top .lk{display:none}.top .bar{grid-template-columns:auto 1fr}.brand{text-align:left; justify-self:start}}
+
+/* HERO — full-bleed image + text overlaid, dark fallback bg */
+.hero{position:relative; min-height:100svh; display:flex; align-items:flex-end; overflow:hidden; background:var(--noyer)}
+.hero__img{position:absolute; inset:0; z-index:0}
+.hero__img img{width:100%; height:100%; object-fit:cover; object-position:64% center}
+.hero__veil{position:absolute; inset:0; z-index:1; background:linear-gradient(95deg,rgba(28,20,13,.8),rgba(28,20,13,.4) 40%,rgba(28,20,13,.05) 72%),linear-gradient(to top,rgba(28,20,13,.6),transparent 44%)}
+.hero__in{position:relative; z-index:2; color:var(--creme2); width:100%; max-width:1280px; margin-inline:auto; padding:0 var(--pad) clamp(3.5rem,8vh,7rem)}
+.hero .kicker{color:var(--argile)}
+.hero h1{font-family:var(--serif); font-style:italic; font-weight:320; font-size:clamp(2.9rem,1.2rem+6.2vw,6.2rem); line-height:1.02; letter-spacing:-.035em; max-width:17ch; margin:1.7rem 0 0}
+.hero h1 b{font-weight:400; font-style:normal}
+.hero .sub{font-size:clamp(1.05rem,1rem+.45vw,1.26rem); color:rgba(251,246,236,.9); margin:1.7rem 0 2.4rem; max-width:33rem; line-height:1.6}
+.hero .cta{display:flex; align-items:center; gap:1.4rem; flex-wrap:wrap}
+
+/* TRUST */
+.trust{background:var(--noyer); color:var(--argile)}
+.trust .row{display:flex; align-items:center; justify-content:center; gap:clamp(1.2rem,4vw,3.4rem); flex-wrap:wrap; padding-block:1.15rem; font-size:.76rem; letter-spacing:.12em; text-transform:uppercase; text-align:center}
+.trust b{color:var(--creme2); font-weight:500}.trust .st{color:var(--or)}
+.trust .sep{width:4px; height:4px; border-radius:50%; background:var(--terra)}
+@media(max-width:680px){.trust .sep{display:none}}
+
+section{position:relative}
+.sec{padding-block:clamp(5rem,10vw,10rem)}
+.dark{background:var(--noyer); color:#e2d2bf}
+.dark h1,.dark h2,.dark h3{color:var(--creme2)}.dark .kicker{color:var(--or)}
+
+/* MANIFESTE */
+.manifest{background:var(--sable); text-align:center}
+.manifest h2{font-size:clamp(2.1rem,1.2rem+3.4vw,4.4rem); line-height:1.1; margin-top:1.8rem; max-width:18ch; margin-inline:auto}
+.manifest .body{max-width:46rem; margin:2.4rem auto 0; color:var(--taupe2); text-align:left; columns:2; column-gap:3rem}
+.manifest .body p+p{margin-top:1.1rem}
+.manifest .punch{font-family:var(--serif); font-style:italic; font-size:clamp(1.4rem,1rem+1.4vw,2.1rem); color:var(--terra); line-height:1.34; max-width:26ch; margin:2.8rem auto 0}
+@media(max-width:680px){.manifest .body{columns:1}}
+
+/* PONT */
+.pont .row{display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,5.5rem); align-items:center}
+.pont h2{font-size:clamp(2.1rem,1.3rem+3vw,4rem)}
+.pont .head{position:relative}.pont .ghostnum{position:absolute; top:-3.4rem; left:-1rem}
+.pont .kicker,.pont h2{position:relative}.pont .body{color:var(--taupe2)}.pont .body p+p{margin-top:1.25rem}
+@media(max-width:820px){.pont .row{grid-template-columns:1fr; gap:1.6rem}.pont .ghostnum{font-size:7rem; top:-1.4rem}}
+
+/* FULL-BLEED BAND */
+.band{position:relative; min-height:clamp(70vh,86vh,940px); overflow:hidden; display:flex; align-items:flex-end; background:var(--noyer)}
+.band img{position:absolute; inset:0; width:100%; height:122%; object-fit:cover; object-position:center 42%}
+.band .veil{position:absolute; inset:0; background:linear-gradient(to top,rgba(28,20,13,.72),rgba(28,20,13,.04) 56%),linear-gradient(102deg,rgba(133,67,40,.26),transparent 52%)}
+.band .q{position:relative; color:var(--creme2); padding:0 var(--pad) clamp(3.5rem,8vw,7rem); width:100%; max-width:1280px; margin-inline:auto}
+.band .q .inner{max-width:34ch}.band .q .kicker{color:var(--argile)}
+.band .q p{font-family:var(--serif); font-style:italic; font-weight:300; font-size:clamp(2rem,1.2rem+3.4vw,4rem); line-height:1.18; margin-top:1.3rem; letter-spacing:-.025em}
+
+/* CAROLE (dark) */
+.carole .row{display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(2rem,5vw,5.5rem); align-items:center}
+.carole__img{position:relative}
+.carole__img img{width:100%; border-radius:6px; aspect-ratio:4/5; object-fit:cover; object-position:center 16%}
+.carole__img .frame{position:absolute; inset:16px -16px -16px 16px; border:1px solid var(--or); border-radius:6px; z-index:-1; opacity:.55}
+.carole h2{font-size:clamp(2.1rem,1.3rem+3vw,4rem); margin:1.3rem 0 0}
+.carole p{color:#cdbaa3; margin-top:1.4rem; max-width:46ch}.carole .tlink{margin-top:1.8rem; color:var(--or)}
+@media(max-width:820px){.carole .row{grid-template-columns:1fr; gap:2.5rem}.carole__img{max-width:440px}}
+
+/* UNIVERS (overlaid image columns) */
+.univers .head{text-align:center; max-width:40rem; margin:0 auto clamp(2.5rem,5vw,4.5rem)}
+.univers h2{font-size:clamp(2.1rem,1.3rem+3vw,4rem); margin-top:1.3rem}
+.cards{display:grid; grid-template-columns:1fr 1fr; gap:clamp(1rem,2vw,1.6rem)}
+.card{position:relative; border-radius:8px; overflow:hidden; min-height:580px; display:flex; flex-direction:column; justify-content:flex-end; color:var(--creme2); background:var(--noyer); transition:transform .65s var(--ease)}
+.card img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1.3s var(--ease); z-index:0}
+.card .veil{position:absolute; inset:0; z-index:1; background:linear-gradient(to top,rgba(28,20,13,.9),rgba(28,20,13,.12) 62%,rgba(28,20,13,.34))}
+.card:hover img{transform:scale(1.05)}
+.card__body{position:relative; z-index:2; padding:clamp(2rem,3.2vw,3rem)}
+.card .tag{font-size:.68rem; letter-spacing:.26em; text-transform:uppercase; color:var(--argile); font-weight:600}
+.card h3{font-size:clamp(1.8rem,1.3rem+1.2vw,2.6rem); margin:.8rem 0 .9rem}
+.card p{color:#e3d3c0; font-size:.98rem; margin-bottom:1.6rem; max-width:40ch}.card .tlink{color:var(--creme2)}
+@media(max-width:820px){.cards{grid-template-columns:1fr}.card{min-height:500px}}
+
+/* ÉTAPES */
+.steps .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.8rem,4vw,4rem); margin-top:3.4rem}
+.step{padding-top:2.2rem; border-top:1px solid var(--lin)}
+.step .n{font-family:var(--serif); font-style:italic; font-size:1rem; color:var(--terra)}
+.step h3{font-size:1.5rem; margin:.7rem 0 .6rem}.step p{color:var(--taupe2); font-size:.96rem}
+@media(max-width:760px){.steps .grid{grid-template-columns:1fr; gap:2rem}}
+
+/* TÉMOIGNAGES */
+.temoins{background:var(--sable)}
+.temoins .head{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem; margin-bottom:3.2rem}
+.temoins h2{font-size:clamp(2rem,1.3rem+2.6vw,3.6rem); max-width:18ch}.temoins .stars{color:var(--terra); letter-spacing:.15em; font-size:1.1rem}
+.tgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.2rem,2.4vw,2rem)}
+.tcard{background:var(--creme2); border:1px solid var(--lin); border-radius:8px; padding:clamp(1.8rem,2.8vw,2.4rem)}
+.tcard .mark{font-family:var(--serif); font-style:italic; font-size:3.4rem; color:var(--argile-d); line-height:.5; height:1.2rem; display:block}
+.tcard p{font-family:var(--serif); font-size:1.16rem; line-height:1.5; color:#3d3128; margin:1rem 0 1.5rem}
+.tcard .who{font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; color:var(--taupe); font-weight:600}
+@media(max-width:820px){.tgrid{grid-template-columns:1fr}}
+
+/* FREEBIE */
+.freebie .box{display:grid; grid-template-columns:1.05fr .95fr; background:linear-gradient(135deg,var(--argile),var(--argile-d)); border-radius:12px; overflow:hidden}
+.freebie__txt{padding:clamp(2.4rem,4.5vw,4.5rem)}
+.freebie__txt h2{font-size:clamp(1.9rem,1.2rem+2vw,3rem); color:var(--encre)}
+.freebie__txt p{color:#4a3528; margin:1.2rem 0 2rem; max-width:36ch}
+.fform{display:flex; gap:.6rem; flex-wrap:wrap; max-width:31rem}
+.fform input{flex:1 1 12rem; padding:1rem 1.3rem; border:1px solid rgba(43,33,24,.28); border-radius:100px; background:rgba(251,246,236,.75); font-family:var(--sans); font-size:.95rem; color:var(--encre)}
+.fform input::placeholder{color:#8a6f5a}.fform small{flex-basis:100%; color:#5b4636; font-size:.78rem; margin-top:.3rem}
+.freebie__img{position:relative; overflow:hidden; min-height:320px; background:var(--argile-d)}
+.freebie__img img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+@media(max-width:820px){.freebie .box{grid-template-columns:1fr}.freebie__img{min-height:240px; order:-1}}
+
+/* FINAL */
+.final{position:relative; overflow:hidden; text-align:center; color:var(--creme2); background:var(--terra-d)}
+.final img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 35%; z-index:0}
+.final .veil{position:absolute; inset:0; z-index:1; background:linear-gradient(to bottom,rgba(133,67,40,.86),rgba(28,20,13,.9))}
+.final .inner{position:relative; z-index:2}
+.final h2{font-family:var(--serif); font-style:italic; font-weight:320; font-size:clamp(2.4rem,1.3rem+4vw,4.6rem); color:var(--creme2); max-width:16ch; margin:1.4rem auto 0; letter-spacing:-.03em}
+.final p{max-width:48ch; margin:1.7rem auto 2.6rem; color:rgba(251,246,236,.9)}
+.final .kicker{color:rgba(251,246,236,.9)}
+.final .cta{display:flex; gap:1.5rem; justify-content:center; align-items:center; flex-wrap:wrap}
+.final .cta a.wa{color:var(--creme2); border-bottom:1px solid rgba(251,246,236,.5); padding-bottom:3px; font-weight:500}
+.final .sig{font-family:var(--serif); font-style:italic; font-weight:300; font-size:clamp(1.4rem,1rem+1.4vw,2.1rem); margin-top:4rem; color:rgba(251,246,236,.9)}
+.final .sig small{display:block; font-family:var(--sans); font-style:normal; font-size:.7rem; letter-spacing:.28em; text-transform:uppercase; color:rgba(251,246,236,.6); margin-top:1.1rem}
+
+/* FOOTER */
+.foot{background:var(--noyer); color:#b3a18b; padding-block:clamp(3.5rem,6vw,5.5rem) 2.5rem; font-size:.92rem}
+.foot .cols{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:2.5rem}
+.foot .fbrand{font-family:var(--serif); font-size:1.7rem; color:var(--creme2)}
+.foot .fbsub{display:block; font-size:.58rem; font-weight:600; letter-spacing:.34em; text-transform:uppercase; color:#8a7660; margin-top:.4rem}
+.foot h4{font-size:.7rem; letter-spacing:.22em; text-transform:uppercase; color:#8a7660; margin-bottom:1.2rem; font-weight:600}
+.foot a{color:#b3a18b; transition:color .3s}.foot a:hover{color:var(--creme2)}
+.foot ul{list-style:none}.foot li{margin-bottom:.6rem}
+.foot .asca{display:inline-block; margin-top:1.3rem; font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; border:1px solid #4a3a2c; border-radius:100px; padding:.45rem .95rem; color:#cbb89f}
+.foot .legal{margin-top:3.2rem; padding-top:1.6rem; border-top:1px solid #382a1d; display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; font-size:.8rem; color:#7d6a55}
+@media(max-width:760px){.foot .cols{grid-template-columns:1fr 1fr}.foot .cols>div:first-child{grid-column:1/-1}}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap bar">
+    <nav class="l"><a class="lk" href="#studio">Le studio</a><a class="lk" href="#accompagnement">Accompagnement</a><a class="lk" href="#reflexo">Réflexologie</a></nav>
+    <a href="#" class="brand"><em>Carole</em> Vallat</a>
+    <div class="r"><a class="lk" href="#carole">À propos</a><a class="res" href="#final">Appel offert</a></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero__img"><img src="./img/reformer.jpg" alt="Carole Vallat en séance de Pilates sur reformer dans son studio au Landeron"></div>
+  <div class="hero__veil"></div>
+  <div class="hero__in">
+    <span class="kicker reveal">Pilates · Yoga · Ménopause — Le Landeron</span>
+    <h1 class="reveal d1">Tu fais de ton mieux. <b>Ton corps, lui, a changé les règles.</b></h1>
+    <p class="sub reveal d2">Mouvement et accompagnement ménopause pour les femmes de 40 ans et plus qui en ont marre des conseils qui ne marchent plus.</p>
+    <div class="cta reveal d2">
+      <a class="btn btn--light" href="#final">Je réserve mon appel offert <span class="arr">→</span></a>
+      <a class="btn btn--out" href="#">M'écrire sur WhatsApp <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap row">
+    <span><span class="st">★★★★★</span> &nbsp;<b>5,0</b> sur Google</span><span class="sep"></span>
+    <span><b>Studio privé</b> au Landeron</span><span class="sep"></span>
+    <span><b>15 ans</b> d'expérience</span><span class="sep"></span>
+    <span><b>Agréée ASCA</b> · remboursable</span>
+  </div>
+</div>
+
+<section class="sec manifest">
+  <div class="wrap">
+    <span class="kicker c nb reveal">Tu te reconnais ?</span>
+    <h2 class="reveal d1">Tu fais attention.<br>Et pourtant.</h2>
+    <div class="body reveal d1">
+      <p>Tu manges plutôt bien, tu essaies de bouger, tu te couches à des heures raisonnables. Et malgré tout : tu te réveilles fatiguée. Le ventre a changé de forme sans que tu aies rien changé. Tu mets plus de temps à récupérer.</p>
+      <p>Tu as cherché des réponses, testé des choses, et tu es tombée sur des conseils contradictoires qui supposent tous que tu n'es pas assez disciplinée — ou pas assez motivée. C'est épuisant. Et c'est injuste.</p>
+    </div>
+    <p class="punch reveal d2">Le problème, ce n'est pas ta motivation : c'est que personne ne t'a vraiment expliqué ce qui se passe dans ton corps depuis 40 ans.</p>
+  </div>
+</section>
+
+<section class="sec pont">
+  <div class="wrap row">
+    <div class="head reveal">
+      <span class="ghostnum">01</span>
+      <span class="kicker">Le constat</span>
+      <h2 style="margin-top:1.2rem">Ce n'est pas toi qui as changé. C'est ton terrain.</h2>
+    </div>
+    <div class="body reveal d1">
+      <p>La ménopause modifie la façon dont ton corps stocke l'énergie, récupère et répond à l'effort. Ce qui fonctionnait à 35 ans demande aujourd'hui une approche différente — <strong>pas plus d'efforts, une approche différente.</strong></p>
+      <p>C'est ce qu'on construit ensemble : un mouvement qui correspond à ta physiologie d'aujourd'hui. Et si tu as besoin de comprendre ce qui se joue hormonalement pour avancer, on travaille aussi là-dessus.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <img src="./img/amb_8821.jpg" alt="Carole Vallat en yoga au bord du lac, lumière dorée d'automne">
+  <div class="veil"></div>
+  <div class="q"><div class="inner reveal">
+    <span class="kicker">Ton deuxième chapitre</span>
+    <p>Pas revenue à « avant ». Mieux qu'avant.</p>
+  </div></div>
+</section>
+
+<section class="sec carole dark" id="carole">
+  <div class="wrap row">
+    <div class="carole__img reveal"><img src="./img/raemy055.jpg" alt="Portrait de Carole Vallat"><span class="frame"></span></div>
+    <div class="reveal d1">
+      <span class="kicker">Qui je suis</span>
+      <h2>Bonjour, je suis Carole.</h2>
+      <p>Enseignante de Pilates et de yoga au Landeron, en studio privé avec du matériel professionnel, j'accompagne les femmes de 40 ans et plus depuis plus de quinze ans.</p>
+      <p>J'ai moi-même vécu ce moment où les repères d'avant ne tiennent plus : la prise de ventre, l'irritabilité, la fatigue, les insomnies — alors que je bougeais et que je faisais attention. Alors j'ai voulu comprendre, pour moi puis pour d'autres femmes.</p>
+      <p>Je ne suis pas médecin : pas de régime, pas d'injonctions. Je t'aide à comprendre ton corps aujourd'hui et à trouver ce qui marche pour toi.</p>
+      <a class="tlink" href="#carole">En savoir plus sur mon parcours <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec univers" id="studio">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker c">Deux univers, une même approche</span>
+      <h2>Deux façons de travailler ensemble.</h2>
+    </div>
+    <div class="cards">
+      <article class="card reveal d1">
+        <img src="./img/pilates.jpg" alt="Pilates sur appareils au studio"><div class="veil"></div>
+        <div class="card__body">
+          <span class="tag">Le mouvement</span>
+          <h3>Le studio — Pilates &amp; Yoga</h3>
+          <p>Séances individuelles ou en petit groupe sur appareil professionnel : reformer, Cadillac, Wunda Chair, Spine Corrector. Yin Yoga et Yoga aérien. Et <strong>Menovibe</strong>, mon nouveau cours collectif pensé pour la péri/ménopause.</p>
+          <a class="tlink" href="#">Voir le studio <span class="arr">→</span></a>
+        </div>
+      </article>
+      <article class="card reveal d2" id="accompagnement">
+        <img src="./img/amb_8473.jpg" alt="Carole Vallat en yoga au bord du lac, en automne"><div class="veil"></div>
+        <div class="card__body">
+          <span class="tag">La ménopause</span>
+          <h3>L'accompagnement ménopause</h3>
+          <p>Un suivi pour comprendre ce que traverse ton corps et construire une approche adaptée : mouvement, récupération, habitudes. En ligne, en individuel ou les deux.</p>
+          <a class="tlink" href="#">Découvrir l'accompagnement <span class="arr">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec steps">
+  <div class="wrap">
+    <span class="kicker reveal">Comment ça se passe</span>
+    <div class="grid">
+      <div class="step reveal d1"><div class="n">01</div><h3>On fait le point</h3><p>Un appel offert de 20 minutes, sans engagement. Tu me parles de ta situation et de ce que tu cherches.</p></div>
+      <div class="step reveal d2"><div class="n">02</div><h3>On construit ton approche</h3><p>Adaptée à ton corps et à ton quotidien — mouvement, récupération, habitudes.</p></div>
+      <div class="step reveal d3"><div class="n">03</div><h3>On avance ensemble</h3><p>À ton rythme, avec un vrai suivi. Tu n'es plus seule à chercher.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec temoins">
+  <div class="wrap">
+    <div class="head">
+      <div class="reveal"><span class="kicker">Ce qu'elles en disent</span><h2 style="margin-top:1.1rem">Elles ne cherchaient pas la perfection. Juste se sentir mieux.</h2></div>
+      <div class="reveal d1" style="text-align:right"><span class="stars">★★★★★</span><br><span style="font-size:.84rem;color:var(--taupe)">5,0 sur Google</span></div>
+    </div>
+    <div class="tgrid">
+      <figure class="tcard reveal d1"><span class="mark">“</span><p>Je ne me reconnaissais plus dans mon corps. Carole m'a aidée à comprendre ce qui se passait et à recommencer à bouger sans me faire mal. Six mois plus tard, j'ai retrouvé mon énergie.</p><figcaption class="who">Martine, 52 ans</figcaption></figure>
+      <figure class="tcard reveal d2"><span class="mark">“</span><p>Enfin une approche qui ne culpabilise pas. On travaille en douceur, mais les résultats sont là : je dors mieux et je me sens plus forte.</p><figcaption class="who">Isabelle, 48 ans</figcaption></figure>
+      <figure class="tcard reveal d3"><span class="mark">“</span><p>Le studio est un cocon. Carole est d'une écoute rare et sait exactement adapter chaque mouvement à ce dont j'ai besoin.</p><figcaption class="who">Andréa, 57 ans</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec freebie">
+  <div class="wrap">
+    <div class="box reveal">
+      <div class="freebie__txt">
+        <span class="kicker">Guide gratuit</span>
+        <h2 style="margin-top:1rem">Pas encore prête à réserver&nbsp;? Commence par comprendre.</h2>
+        <p>Reçois <strong>« Ménopause Glow »</strong>, mon mini-guide gratuit pour soutenir ta physiologie et retrouver énergie, force et légèreté après 40 ans.</p>
+        <form class="fform" onsubmit="return false">
+          <input type="email" placeholder="Ton adresse e-mail" aria-label="e-mail">
+          <button class="btn" type="submit">Recevoir mon guide <span class="arr">→</span></button>
+          <small>Offert, envoyé par e-mail. Sans engagement.</small>
+        </form>
+      </div>
+      <div class="freebie__img"><img src="./img/amb_8726.jpg" alt="Carole Vallat en yoga au bord de l'eau"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec final" id="final">
+  <img src="./img/portrait.jpg" alt="">
+  <div class="veil"></div>
+  <div class="wrap inner">
+    <span class="kicker c nb">On commence&nbsp;?</span>
+    <h2>La première étape, c'est un appel de 20 minutes.</h2>
+    <p>Gratuit, sans engagement. Tu me parles de ta situation, de ce que tu as déjà essayé, de ce que tu cherches. On voit ensemble si ce que je propose peut t'aider. Pas de discours — juste une vraie conversation.</p>
+    <div class="cta">
+      <a class="btn btn--light" href="#">Je réserve mon appel offert <span class="arr">→</span></a>
+      <a class="wa" href="#">M'écrire sur WhatsApp</a>
+    </div>
+    <p class="sig">« Passe de spectatrice à actrice de ta ménopause. »<small>Carole Vallat</small></p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="fbrand">Carole Vallat<span class="fbsub">Studio Soham · Le Landeron</span></span>
+        <p style="margin-top:1.4rem; max-width:32ch; color:#a08c75">Mouvement, yoga et accompagnement ménopause pour les femmes de 40 ans et plus, au cœur de l'Entre-deux-Lacs.</p>
+        <span class="asca">Agréée ASCA · Réflexologie remboursable</span>
+      </div>
+      <div><h4>Naviguer</h4><ul><li><a href="#studio">Le studio</a></li><li><a href="#accompagnement">L'accompagnement</a></li><li><a href="#reflexo">Réflexologie</a></li><li><a href="#">Ma méthode</a></li><li><a href="#carole">À propos</a></li></ul></div>
+      <div><h4>Studio</h4><ul><li>Ville 1, 2525 Le Landeron</li><li><a href="tel:+41789242482">+41 78 924 24 82</a></li><li><a href="mailto:info@carolevallat.ch">info@carolevallat.ch</a></li><li><a href="#">Instagram</a> · <a href="#">Facebook</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Carole Vallat — Studio Soham</span><span><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a></span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hdr=document.getElementById('top');
+  function onScroll(){ hdr.classList.toggle('solid', window.scrollY > window.innerHeight*0.7); }
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+  var items=document.querySelectorAll('.reveal');
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(reduce || !('IntersectionObserver' in window)){
+    items.forEach(function(el){el.classList.add('in')}); return;
+  }
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);}})},{threshold:.12});
+  items.forEach(function(el){io.observe(el)});
+  // failsafe: never leave content hidden
+  setTimeout(function(){items.forEach(function(el){el.classList.add('in')})}, 2200);
+})();
+</script>
+</body>
+</html>
