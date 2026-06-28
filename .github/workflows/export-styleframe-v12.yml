@@ -1,0 +1,24 @@
+name: Export styleframe v12 artifact
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Upload v1.2 styleframe artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: suspension-v12-images
+          path: |
+            styleframe-v1/suspension-v1.2-desktop.jpg
+            styleframe-v1/suspension-v1.2-mobile.jpg
+          if-no-files-found: error
+          retention-days: 2
