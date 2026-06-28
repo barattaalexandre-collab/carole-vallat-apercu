@@ -1,0 +1,26 @@
+name: Export styleframe artifact
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify styleframe files
+        run: |
+          ls -lh styleframe-v1/
+          file styleframe-v1/suspension-v1-desktop.jpg styleframe-v1/suspension-v1-mobile.jpg
+      - name: Upload styleframe artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: suspension-v1-images
+          path: styleframe-v1/*.jpg
+          if-no-files-found: error
+          retention-days: 2
