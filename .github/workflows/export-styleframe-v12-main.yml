@@ -1,0 +1,26 @@
+name: Export v12 styleframe from main
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/export-styleframe-v12-main.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Upload v1.2 styleframe artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: suspension-v12-images
+          path: |
+            styleframe-v1/suspension-v1.2-desktop.jpg
+            styleframe-v1/suspension-v1.2-mobile.jpg
+          if-no-files-found: error
+          retention-days: 2
